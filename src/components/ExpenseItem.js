@@ -20,7 +20,7 @@ const ExpenseItem = ({id,name,quantity,unitprice}) => {
     }
     return (
         <tr>
-              <th scope="row">{name}</th>
+              <td>{name}</td>
               <td>{quantity}</td>
               <td>{Location}{parseInt(unitprice)}</td>
               <td>{Location}{parseInt(quantity)*parseInt(unitprice)}</td>

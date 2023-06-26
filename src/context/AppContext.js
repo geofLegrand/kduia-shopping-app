@@ -79,7 +79,7 @@ export const AppContext = React.createContext()
 
 // 4 - Create the AppContext component and implemented the provider
 
-const AppProvider = () => {
+export const AppProvider = (props) => {
 
     const [state,dispatch] = useReducer(AppReducer,initialState)
 
@@ -88,7 +88,7 @@ const AppProvider = () => {
     state.CartValue = totalExpenses;
 
   return (
-    <AppContext.Provider>
+    <AppContext.Provider
        
         value={{
                     expenses: state.expenses,
@@ -96,7 +96,8 @@ const AppProvider = () => {
                     dispatch,
                     Location: state.Location
                 }}
-        
+        >
+            {console.log(props)}
                 {props.children}
        
     </AppContext.Provider>
